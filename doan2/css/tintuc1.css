@@ -1,0 +1,171 @@
+
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+.trangchu::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.tt1::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+}
+  
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+.tieud h1{
+    text-align: center;
+    color: rgb(170, 19, 19);
+}
+.img img{
+    height: 80px;
+}
+.menu li {
+    display: inline-block;
+    padding: 20px;
+    font-size: 25px;
+    color: white;
+}
+.menu ul {
+
+    background-color:red;
+    text-align: center;
+}
+.menu a:hover{
+    border-bottom: 2px solid white;
+}
+.td p{
+    border-top: 1px solid ;
+    font-size: 40px;
+    margin: 50px;
+    text-align: center;
+}
+
+.img1 img{
+    width: 100%;
+}
+.txt1 {
+    width: 70%;
+    margin: 0 auto;
+}
+.txt1 p{
+    padding: 30px;
+    font-size: 20px;
+}
+.txt2 {
+    width: 50%;
+    margin: 0 auto;
+    border-left: 2px solid red;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.txt3 {
+    width: 70%;
+    margin: 0 auto;
+}
+.txt3 p{
+    padding: 30px;
+    font-size: 20px;
+}
+.txt4 {
+    width: 50%;
+    margin: 0 auto;
+    border-left: 2px solid red;
+    font-size: 20px;
+    padding: 5px;
+}
+.txt5 {
+    width: 70%;
+    margin: 0 auto;
+}
+.txt5 p{
+    padding: 30px;
+    font-size: 20px;
+}
+.Footer{
+    background-color: rgb(68, 63, 63);
+    color: white;
+    line-height: 25px;
+    padding: 20px;
+}
+.b1 ul li {
+    display: inline-block;
+}
+.b1 ul{
+    float: right;
+}
+.b1 a{
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+}
+.b1 h2{
+    float:left;
+}
+.b1 li:hover{
+    border-bottom: 1px solid red;
+}
+
+.b2 p{
+    clear: left;
+}
+.b2 ul li{
+    display: block;
+    text-align: center;
+}
+.b2 a{
+    color: white;
+
+    text-align: left;
+}
+.b2 a:hover{
+    color: green;
+}
+.sticker{
+    text-align: center;
+    font-size: 30px;
+}
+.sticker a{
+    color: white;
+}

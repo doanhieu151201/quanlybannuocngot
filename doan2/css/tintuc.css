@@ -1,0 +1,279 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+.trangchu::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.tintuc::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    width: 100%;
+}
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  }
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+.tieud h1{
+    text-align: center;
+    color: rgb(170, 19, 19);
+
+}
+.img img{
+    height: 80px;
+}
+.menu li {
+    display: inline-block;
+    padding: 20px;
+    font-size: 25px;
+    color: white;
+
+}
+.menu ul {
+
+    background-color:red;
+    text-align: center;
+}
+.menu a:hover{
+    border-bottom: 2px solid white;
+}
+.tt1{
+    border-top: 1px solid grey;
+    width: 80%;
+    margin: 0 auto;
+}
+.img1 img{
+    width: 70%;
+    padding: 10px;
+}
+.b{
+    
+    text-align: center;
+}
+.txt1 a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+.txt1 {
+    padding: 20px 16%;
+    text-align: left;
+}
+.txt1 a:hover{
+    border-bottom: 2px solid red;
+}.txtc{
+    border-top: 1px solid grey;
+    width: 70%;
+    margin: 0 auto;
+    clear: left;
+}
+.img2 img{
+    padding: 20px 0;
+    width: 100%;
+}
+.txt2{
+    padding: 10% 20px;
+}
+.txt2 a{
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+.txt2 a:hover{
+    border-bottom: 1px solid red;
+}
+.txtc1{
+    border-top: 1px solid grey;
+    clear: left;
+    width: 70%;
+    margin: 0 auto;
+}
+.img3 img{
+    padding: 20px 0;
+    width: 100%;
+}
+.txt3{
+    padding: 10% 20px;
+}
+.txt3 a{
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+.txt3 a:hover{
+    border-bottom: 1px solid red;
+}
+.txtc2{
+    border-top: 1px solid grey;
+    clear: left;
+    width: 70%;
+    margin: 0 auto;
+}
+.img4 img{
+    padding: 20px 0;
+    width: 100%;
+}
+.txt4{
+    padding: 10% 20px;
+}
+.txt4 a{
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+.txt4 a:hover{
+    border-bottom: 1px solid red;
+}
+.b1{
+    text-align: center;
+    border-top: 1px solid grey;
+}
+.img5 img{
+    width: 80%;
+}
+.txt5 a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+.txt5 {
+    padding: 0 8%;
+    clear: left;
+}
+.txt5 a:hover{
+    border-bottom: 2px solid red;
+}
+.tt2{ 
+       clear: left;
+    width: 70%;
+    margin: 0 auto;
+}
+.txtc3{
+    padding: 10px;
+}
+.txtc4{
+    padding:  10px;
+}
+.txtc5{
+    padding:   10px;
+}
+.img6 img{
+    width: 100%;
+}
+.txt6 a{
+    color: black;
+    font-size: 20px;
+    text-align: left;
+    text-decoration: none;
+}
+.txt6 a:hover{
+    border-bottom: 1px solid red;
+}
+.img7 img{
+    width: 100%;
+}
+.txt7 a{
+    color: black;
+    font-size: 20px;
+    text-align: left;
+    text-decoration: none;
+}
+.txt7 a:hover{
+    border-bottom: 1px solid red;
+}
+
+.img8 img{
+    width: 100%;
+}
+.txt8 a{
+    color: black;
+    font-size: 20px;
+    text-align: left;
+    text-decoration: none;
+}
+.txt8 a:hover{
+    border-bottom: 1px solid red;
+}
+.Footer{
+    background-color: rgb(68, 63, 63);
+    color: white;
+    line-height: 25px;
+    padding: 20px;
+}
+.b4 ul li {
+    display: inline-block;
+}
+.b4 ul{
+    float: right;
+}
+.b4 a{
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+}
+.b4 h2{
+    float:left;
+}
+.b4 li:hover{
+    border-bottom: 1px solid red;
+}
+
+.b2 p{
+    clear: left;
+}
+.b2 ul li{
+    display: block;
+    text-align: center;
+}
+.b2 a{
+    color: white;
+
+    text-align: left;
+}
+.b2 a:hover{
+    color: green;
+}
+.sticker{
+    text-align: center;
+    font-size: 30px;
+}
+.sticker a{
+    color: white;
+}

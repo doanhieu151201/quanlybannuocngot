@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/qldm.css">
+    <script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div class="col-12 admin">
+        <div class="head col-3 col-s-3">
+            <h1><a href="admin.html"> Admin</a></h1>
+            <div class="dk ">
+                <ul>
+                    <li><a href="qlsp.html">Quản lý sản phẩm</a> </li>
+                    <li><a href="qldm.html">Quản lý danh mục</a></li>
+                    <li><a href="qlnd.html">Quản lý người dùng</a></li>
+                    <p> <a href="loginad.html">Đăng nhập</a></p>
+                    <li><a href="loginad.html">Đăng xuất</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="qldm col-9 col-s-9">
+            <h1>Quản lý danh mục</h1>
+            <div class="ds">
+                <table class="tb">
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên</th>
+                        <th>Thông tin</th>
+                        <th colspan="4">Chức năng</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Pepsi</td>
+                        <td>Ngon, bổ, rẻ</td>
+                        <td><input type="button" name="" id="e" value="Xoá" onclick="xoa(this)"></td>
+                        <td><button id="them" onclick="them()"  >Thêm</button> </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Pepsi</td>
+                        <td>Ngon, bổ, rẻ</td>
+                        <td><input type="button" name="" id="e" value="Xoá" onclick="xoa(this)"></td>
+                        <td><button id="them" onclick="them()"  >Thêm</button> </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Pepsi</td>
+                        <td>Ngon, bổ, rẻ</td>
+                        <td><input type="button" name="" id="e" value="Xoá" onclick="xoa(this)"></td>
+                        <td><button id="them" onclick="them()"  >Thêm</button> </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="add">
+                <div class="animate">
+                </div>
+                <table class="table">
+                    <tr>
+                        <td><p>Tên: </p></td>
+                        <td><input type="text" name="b" id="" value="" placeholder="Nhập tên danh mục..."></td>
+                    </tr>
+                    <tr>
+                        <td><p>Thông tin: </p></td>
+                        <td><input type="text" name="c" id="" value="" placeholder="Nhập thông tin danh mục..."></td>
+                    </tr>
+                </table>
+                <button id="dk">Thêm</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('document').ready(function(){
+            $('#dk').click(function(){
+                var number =$('.tb tr').length;
+                var b=$('input[name="b"]').val();
+                var c=$('input[name="c"]').val();
+                var st= '<tr><td>' +number+'</td><td>'+b+'</td><td>'+c+'</td><td>'+"<input type='button' id='e' value='Xoá' onclick='xoa(this)''>"+'</td><td>'+"<button id='them' onclick='them()''  >Thêm</button>"+' </td></tr>';
+                $('table').append(st);
+                $('.add').hide();
+                debugger;
+            });
+            $('#e').click(function(){
+                if(confirm("Bạn có muốn xoá không"))
+                {
+                    $(this).parent().parent().remove();
+                }
+                else{
+                    return false;
+                }
+            });
+            $('#them').click(function(){
+                $('.add').show();
+            });
+
+        });
+        function xoa(h){
+            if(confirm("Bạn có muốn xoá không"))
+                {
+                    $(h).parent().parent().remove();
+                }
+                else{
+                    return false;
+                }
+        }
+        function them(){
+            $('.add').show();
+        }
+    </script>
+</body>
+</html>

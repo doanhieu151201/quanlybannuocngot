@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý người dùng</title>
+    <script src="jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="css/qlnd.css">
+</head>
+<body>
+    <div class="col-12 admin">
+        <div class="head col-3 col-s-3">
+            <h1><a href="admin.html"> Admin</a></h1>
+            <div class="dk ">
+                <ul>
+                    <li><a href="qlsp.html">Quản lý sản phẩm</a> </li>
+                    <li><a href="qldm.html">Quản lý danh mục</a></li>
+                    <li><a href="qlnd.html">Quản lý người dùng</a></li>
+                    <p> <a href="loginad.html">Đăng nhập</a></p>
+                    <li><a href="loginad.html">Đăng xuất</a> </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="qlnd col-9 col-s-9">
+            <h1>Quản lý người dùng</h1>
+            <div class="ds">
+                <table class="tb">
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ tên</th>
+                        <th>Tài khoản</th>
+                        <th >Email</th>
+                        <th>Số điện thoại</th>
+                        <th colspan="2">Chức năng</th>
+                    </tr>
+                    <tr>
+                        <td>1
+                        </td>
+                        <td>Đoàn Trung Hiếu</td>
+                        <td>hieucoidk</td>
+                        <td>hieucoidk3@gmail.com</td>
+                        <td>093020222</td>
+                        <td><input type="button" name="" id="e" value="Xoá"></td>
+                        <td><button id="them">Thêm</button> </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Đoàn Trung Hiếu</td>
+                        <td>hieucoidk</td>
+                        <td>hieucoidk3@gmail.com</td>
+                        <td>093020222</td>
+                        <td><input type="button" name="" id="e" value="Xoá"onclick="xoa(this)"></td>
+                        <td><button id="them" onclick="them()">Thêm</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Đoàn Trung Hiếu</td>
+                        <td>hieucoidk</td>
+                        <td>hieucoidk3@gmail.com</td>
+                        <td>093020222</td>
+                        <td><input type="button" name="" id="e" value="Xoá" onclick="xoa(this)"></td>
+                        <td><button id="them" onclick="them()"  >Thêm</button> </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="add">
+                <div class="animate">
+                </div>
+                <table class="table">
+                    <tr>
+                        <td><p>Họ tên: </p></td>
+                        <td><input type="text" name="b" id="" value="" placeholder="Nhập họ tên..."></td>
+                    </tr>
+                    <tr>
+                        <td><p>Tài khoản: </p></td>
+                        <td><input type="text" name="c" id="" value="" placeholder="Nhập tài khoản..."></td>
+                    </tr>
+                    <tr>
+                        <td><p>Mật khẩu:</p></td>
+                        <td><input type="text" name="d" id="" placeholder="Nhập mật khẩu"></td>
+                    </tr>
+                    <tr>
+                        <td><p>Email:</p></td>
+                        <td><input type="text" name="e" id="" value="" placeholder="Nhập email..."></td>
+                    </tr>
+                    <tr>
+                        <td><p>Số điện thoại:</p></td>
+                        <td><input type="text" name="f" id="" value="" placeholder="Nhập số điện thoại..."></td>
+                    </tr>
+                </table>
+                <button id="dk">Thêm</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('document').ready(function(){
+            $('#dk').click(function(){
+                var number =$('.tb tr').length;
+                var b=$('input[name="b"]').val();
+                var c=$('input[name="c"]').val();
+                var e=$('input[name="e"]').val();
+                var f=$('input[name="f"]').val();
+                var st= '<tr><td>' +number+'</td><td>'+b+'</td><td>'+c+'</td><td>'+e+'</td><td>'+f+'</td> <td>'+"<input type='button' id='e' value='Xoá' onclick='xoa(this)''>"+'</td><td>'+"<button id='them' onclick='them()''  >Thêm</button>"+' </td></tr>';
+                $('table').append(st);
+                $('.add').hide();
+                debugger;
+            });
+            $('#e').click(function(){
+                if(confirm("Bạn có muốn xoá không"))
+                {
+                    $(this).parent().parent().remove();
+                }
+                else{
+                    return false;
+                }
+            });
+            $('#them').click(function(){
+                $('.add').show();
+            });
+        });
+        function xoa(h){
+            if(confirm("Bạn có muốn xoá không"))
+                {
+                    $(h).parent().parent().remove();
+                }
+                else{
+                    return false;
+                }
+        }
+        function them(){
+            $('.add').show();
+        }
+    </script>
+</body>
+</html>

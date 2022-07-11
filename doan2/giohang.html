@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/giohang.css">
+    <title>Giỏ hàng</title>
+</head>
+
+<body>
+    <section>
+        <div class="trangchu">
+            <div class="head">
+                <div class="tieud">
+                    <h1>Công ty nước ngọt Trung Hiếu</h1>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <a href="trangchu.html"><li>Trang chủ</li></a>
+                        <a href="lichsu.html"><li>Giới thiệu</li></a>
+                        <a href="sanpham.html"><li>Sản phẩm</li></a>
+                        <a href="tintuc.html"><li>Tin tức</li></a>
+                        <a href="giohang.html"><li>Giỏ hàng</li></a>
+                        <li></li><input type="text" name="" id="" placeholder="Tìm kiếm..."></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>   
+        <div class="col-8 col-s-12">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên sản phẩm</th>
+                        <th>Hình ảnh</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Tổng(VNĐ)</th>
+                        <th>Chức năng</th>
+                    </tr>
+                </thead>
+                <tbody id="listCart" >
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4 col-s-12">
+            <div class="tong">
+                <span style="float: left;">Tổng:</span>
+                <p id="txt" style="float: left;">0</p><p>đ</p>
+            </div>
+            <div class="btn">
+                <button onclick="a()">Tiến hành thanh toán</button>
+                <button onclick="updateCart()">Cập nhật giỏ hàng</button>
+                <button onclick="XoaCart()"> Xóa Giỏ hàng</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        var list = JSON.parse(localStorage.getItem('cart'));
+        function LoadData() {
+            var str = "";
+            var n = 0;
+            var t =0;
+            for (x of list) {
+                t += x.price * x.quantity;
+                str += `<tr>
+                        <td>`+ x.name + `</td>
+                        <td><img style="width: 50px; height: 50px;" src="`+ x.image + `"> </td>
+                        <td>`+ x.price + `</td>
+                        <td> 
+                            <button onclick="Giam(`+ x.id + `)">-</button>
+                            <input id="q_`+ Number(x.id)+`" onchange="updateQuantity(`+ x.id + `)" type="text" value="`+ x.quantity + `" style="width: 30px;" >
+                            <button onclick="Tang(`+ x.id + `)">+</button>
+                        </td>
+                        <td>`+ (x.price * x.quantity) + `</td>
+                        <td><i onclick="Xoa(`+ x.id + `)" class="fa fa-trash-o" style="font-size:30px;color:red;cursor: pointer;"></i></td>
+                    </tr>
+                 `;
+            }
+            document.getElementById("listCart").innerHTML = str;
+            document.getElementById("txt").innerHTML=t;
+            debugger;
+        }
+        function XoaCart() {
+            localStorage.setItem('cart', null);
+            location.reload();
+        }
+        function Xoa(id) {
+            var index = list.findIndex(x => x.id == id);
+            if (index >= 0) {
+                list.splice(index, 1);
+                alert("Đã xoá khỏi giỏ hàng");
+            }
+            LoadData();
+        }
+        function a(){
+            alert("Thanh toán thành công");
+
+        }
+        function updateCart() {
+            localStorage.setItem('cart', JSON.stringify(list));
+             alert("Đã cập nhật thông tin giỏ hàng thành công");
+        }
+        function Tang(id) {
+            var index = list.findIndex(x =>x.id == id);
+            if (index >= 0) {
+                list[index].quantity += 1; 
+            }
+            LoadData();
+        }
+        function Giam(id) {
+            var index = list.findIndex(x => x.id == id);
+            if (index >= 0 && list[index].quantity >=1) {
+                list[index].quantity -= 1; 
+            }
+            LoadData();
+        }
+        function updateQuantity(id) {
+            var quantity = Number($('#q_'+id).val());
+            var index = list.findIndex(x => x.id == id);
+            if (index >= 0 && list[index].quantity >=1) {
+                list[index].quantity = quantity; 
+            }
+            LoadData();
+        }
+        LoadData();
+    </script>
+</body>
+</html>
